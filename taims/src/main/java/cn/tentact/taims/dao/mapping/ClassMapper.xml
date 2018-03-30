@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.tentact.taims.dao.ClassDao">
+	<select id="searchList" resultType="Map">
+		SELECT id,name,major,type,state,place_id FROM class;
+	</select>
+	<select id="searchPage" parameterType="Map" resultType="Map">
+		SELECT c.id,c.name,c.major,c.type,c.state,p.name as placeName
+		FROM class c
+		JOIN place p
+		on c.place_id = p.id
+		ORDER BY c.id
+		LIMIT #{start},#{length}
+	</select>
+	<select id="searchCount" resultType="long">
+		SELECT COUNT(*) as count FROM class;
+	</select>
+	<delete id="deleteById" parameterType="int">
+		DELETE FROM class WHERE id=#{id};
+	</delete>
+	<delete id="deleteByIds" parameterType="Map">
+		DELETE FROM class 
+		<where>
+			id IN
+			<foreach item="one" collection="ids" open="(" close=")" separator=",">
+				#{one}
+			</foreach>
+		</where>
+	</delete>
+	<insert id="insertStudent" parameterType="Map" >
+		INSERT INTO class(id,name,major,type,state,place_id) 
+		VALUES (next value for MYCATSEQ_CLASS,
+		#{name}, 
+		#{major},
+		#{type},
+		#{state},
+		#{place_id}
+		)
+	</insert>
+	<update id="updateClassInfo"  parameterType="Map" >
+		UPDATE class set
+		name = #{name}, 
+		major = #{major},
+		type = #{type},
+		state = #{state},
+		place_id = #{place_id}
+		WHERE id=#{id}
+	</update>
+</mapper>

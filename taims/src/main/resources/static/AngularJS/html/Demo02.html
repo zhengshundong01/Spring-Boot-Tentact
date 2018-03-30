@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../js/Demo02.css"/>
+	</head>
+	<body>
+		<div ng-controller="A">
+			<form name="searchForm" method="post" ng-submit="search($event)">
+				<p>
+					姓名：<input type="text" name="name" ng-model="name" placeholder="姓名" required="required" ng-pattern="" "/^[0-9]{4}$/"/>
+				</p>
+				<p>
+					身份证：<input type="text" name="pid" ng-model="pid" placeholder="身份证" required="required" ng-pattern="/^[0-9]{3}$/"/>
+				</p>
+				<p>
+					<input type="submit" value="检索"/>
+				</p>
+				
+			</form>
+		</div>
+		
+		<div ng-controller="B">
+			<form method="post" ng-submit="order($event)" name="orderForm">
+				<div class="order">
+					<table class="list">
+						<tr>
+							<td>商品名称</td>
+							<td>商品单价</td>
+							<td>商品数量</td>
+						</tr>
+						<tr ng-repeat="one in goods">
+							<td class="ng-cloak" ng-cloak>{{$index+1}}.{{one.name}}</td>
+							<td class="ng-cloak" ng-cloak>{{one.price}}</td>
+							<td>
+								<input type="number" class="num" min="0" ng-model="one.num" ng-change="calc()"/>
+							</td>
+							
+						</tr>
+						<tr>
+							<td colspan="3">
+								总价：{{total}}元
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								姓名：<input type="text" name="name" ng-model="name" required="required" ng-pattern="/^[\u4e00-\u9fa5]{2,4}$/"/>
+								<span ng-show="orderForm.name.$valid">正确</span>
+								<span ng-show="orderForm.name.$invalid">错误</span>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								电话：<input type="text" name="tel" ng-model="tel" required="required" ng-pattern="/^[1-9]\d{10}$/"/>
+								<span ng-show="orderForm.name.$valid">正确</span>
+								<span ng-show="orderForm.name.$invalid">错误</span>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								地址：<input type="text" name="address" ng-model="address" required="required" ng-pattern="/^[0-9a-zA-Z\u4e00-\u9fa5]{10,}$/"/>
+								<span ng-show="orderForm.name.$valid">正确</span>
+								<span ng-show="orderForm.name.$invalid">错误</span>
+							</td>
+						</tr>
+					</table>
+					<p>
+						<input type="submit"  value="提交 " />
+					</p>
+				</div>
+			</form>
+		</div>
+		<div ng-controller="D">
+			<p class="ng-cloak" ng-cloak>{{today}}</p>
+			<p ng-non-bindable>{{today}}</p>
+			<p>部门：<input type="text" ng-model="dept" /></p>
+			<p>{{dept}}</p>
+			<div ng-if="dept=='市场部'">
+				<h3>市场部条例</h3>
+				<p>1.每个月吃鸡15只</p>
+				<p>2.吃鸡之后擦嘴</p>
+			</div>
+			<div ng-if="dept=='教学部'">
+				<h3>教学部</h3>
+				<p>1.做个好老师</p>
+				<p>2.做不好打死</p>
+			</div>
+			<p>
+				<input type="number" name="num" id="num" ng-model="num" min="1"/>
+			</p>
+			<p ng-pluralize count="num" when="{'1':'1','2':'2'}">
+				
+			</p>
+		</div>
+		
+		
+		
+		<script src="../js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/Demo02.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

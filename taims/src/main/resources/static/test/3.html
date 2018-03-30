@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<p>
+			{{username}},{{address}}
+		</p>
+		<p v-for="one in children"><!-- 循环输出 -->
+			{{one.name}},{{one.sex}},{{one.age}}
+		</p>
+		<p>
+			<input type="text" v-model="password"/>
+		</p>
+		<p>
+			{{password}}
+		</p>
+		<p>
+			<input type="button" value="ok" @click="test()"/>
+		</p>
+	</div>
+	<script src="../js/vue.min.js"></script>
+	<script>
+		var app=new Vue({
+			el:"#app",
+			data:{
+				username:"Jack",
+				address:"beijing",
+				children:[{name:"Jim",sex:"Boy",age:12},
+					{name:"Tom",sex:"Boy",age:12},
+					{name:"HYM",sex:"Girl",age:12}],
+				password:""
+			},
+			methods:{
+				test:function(){
+					alert(this.password)
+				}
+			}
+		});
+	</script>
+</body>
+</html>

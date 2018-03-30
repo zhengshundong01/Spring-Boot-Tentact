@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+<link rel="stylesheet" href="add.css" />
+<link rel="stylesheet" href="../../js/iview/iview.css" />
+</head>
+<body>
+	<h3 class="title">学生信息</h3>
+	<div id="class-info-add">
+		<p>
+			<i-input v-model="name" required="required"> <span slot="prepend">姓名</span> </i-input>
+		</p>
+		<p>
+			<i-input v-model="major" required="required"> <span slot="prepend">培训科目</span> </i-input>
+		</p>
+		<p>
+			<span class="attibute">类型</span>
+			<i-select v-model="typeId" style="width:200px">
+       			<i-option v-for="item in typeList" :value="item.label" >{{ item.label }}</i-option>
+   			</i-select>
+		</p>
+		<p>
+			<span class="attibute">状态</span>
+			<i-select v-model="stateId" style="width:200px">
+       			<i-option v-for="item in stateList" :value="item.label" >{{ item.label }}</i-option>
+   			</i-select>
+		</p>
+		<p>
+			<span class="attibute">地点</span>
+			<i-select v-model="placeNameId" style="width:200px">
+       			<i-option v-for="item in placeNameList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
+   			</i-select>
+		</p>
+		<p>
+			<i-button type="primary" @click="updateInfo">保存</i-button>
+			<i-button type="primary" @click="cancelInfo">取消</i-button>
+		</p>
+	</div>
+	<script src="../../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/iview/iview.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/pid.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="modify.js"></script>
+</body>
+</html>

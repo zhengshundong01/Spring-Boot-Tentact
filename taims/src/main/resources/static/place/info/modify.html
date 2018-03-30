@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+<link rel="stylesheet" href="add.css" />
+<link rel="stylesheet" href="../../js/iview/iview.css" />
+</head>
+<body>
+	<h3 class="title">学生信息</h3>
+	<div id="place-info-add">
+		<p>
+			<i-input v-model="name" required="required"> <span slot="prepend">姓名</span> </i-input>
+		</p>
+		<p>
+			<i-button type="primary" @click="updateInfo">保存</i-button>
+			<i-button type="primary" @click="cancelInfo">取消</i-button>
+		</p>
+	</div>
+	<script src="../../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/iview/iview.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/pid.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="modify.js"></script>
+</body>
+</html>

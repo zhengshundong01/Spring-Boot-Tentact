@@ -1,0 +1,25 @@
+body {
+  font-size: 100%;
+}
+.order {
+  width: 25rem;
+  border: solid #e0e0e0 0.0625rem;
+  background-color: #fafafa;
+}
+.order .list {
+  border: none;
+  width: inherit;
+  font-size: 0.875rem;
+}
+.order .list tr {
+  height: 1.5rem;
+}
+.order .list .num {
+  width: 3.75rem;
+  outline: none;
+  border: none;
+  background-color: #FAFAFA;
+}
+.ng-cloak {
+  display: none;
+}

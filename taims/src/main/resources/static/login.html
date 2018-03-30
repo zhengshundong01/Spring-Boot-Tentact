@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="login.css" />
+	<link rel="stylesheet" href="js/iview/iview.css" />
+</head>
+<body>
+	<div class="header">
+		<div class="container">
+			<a href="#" class="logo">
+				<h2>Taims Cloud</h2>
+				<h3>滕泰云管理系统</h3>
+			</a>
+			<div class="search">
+				<input type="text" class="keyword"/>
+				<input type="button" class="btn" />
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="system">
+			<div class="container card">
+				<img src="img/banner_1.jpg" width="528" height="320" />
+				<div class="operate">
+					<ul class="tab">
+						<li id="loginTab" class="tab-active" @click="showLoginPanel()">登陆系统</li>
+						<li id="recoverTab" @click="showRecoverPanel()">重置密码</li>
+					</ul>
+					<div class="pannel pannel-active" id="loginPannel">
+						<form action="/user/login" method="post">
+							<p class="input-line">
+								<label for="loginUsername">用户名</label>
+								<input type="text" id="loginUsername" name="username" required="required" pattern="^[0-9a-zA-Z]{3,15}$"/>
+							</p>
+							<p class="input-line">
+								<label for="loginPassword">密码</label>
+								<input type="password"  id="loginPassword" name="password" required="required" pattern="^[0-9a-zA-Z]{6,15}$"/>
+							</p>
+							<p>
+								选择身份：
+								<radio-group v-model="loginRole">
+									<radio label="学生"></radio>
+									<radio label="员工"></radio>
+									<radio label="客户"></radio>
+								</radio-group>
+							</p>
+							<p>
+								<input type="submit" value="登陆系统" class="btn"/>
+							</p>
+						</form>
+					</div>
+					<div class="pannel" id="recoverPannel">
+						<p class="input-line">
+							<label for="recoverUsername">用户名</label>
+							<input type="text" id="recoverUsername"/>
+						</p>
+						<p class="input-line">
+							<label for="recoverEmail">邮箱</label>
+							<input type="text"  id="recoverEmail"/>
+						</p>
+						<p>
+							选择身份：
+							<radio-group v-model="recoverRole">
+								<radio label="学生"></radio>
+								<radio label="员工"></radio>
+								<radio label="客户"></radio>
+							</radio-group>
+						</p>
+						<p>
+							<input type="button" value="找回密码" class="btn"/>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="container"></div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container"></div>
+	</div>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript" src="js/iview/iview.min.js"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	
+</body>
+</html>

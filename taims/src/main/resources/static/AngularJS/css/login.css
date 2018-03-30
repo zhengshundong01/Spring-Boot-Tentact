@@ -1,0 +1,299 @@
+body {
+  font-size: 100%;
+  color: #333;
+  font-family: "微软雅黑", "helvetica Neue", helvetica, arial, sans-serif, "microsoft yahei", "Heiti SC";
+  background-color: #fff;
+  background-image: url(../img/236127.jpg);
+  padding: 0;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main {
+  width: 75rem;
+  height: 37.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  position: relative;
+}
+.main .login-container {
+  width: 31.25rem;
+  height: 26.875rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 0.3125rem rgba(255, 255, 255, 0.6);
+  border-radius: 0.3125rem;
+  top: 9.375rem;
+  position: absolute;
+  right: 1.25rem;
+  padding-top: 2.5rem;
+  box-sizing: inherit;
+  padding-bottom: 2.5rem;
+}
+.main .login-container .login-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.main .login-container .login-list .login-item {
+  text-align: center;
+  height: 4rem;
+}
+.main .login-container .login-list .login-item .login-title {
+  font-size: 1.875rem;
+  font-weight: 300;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.0625rem;
+}
+.main .login-container .login-list .login-item .input {
+  width: 21.875rem;
+  height: 2.5rem;
+  border-radius: 0.1875rem;
+  border: solid 0.0625rem #e9e9e9;
+  outline: none;
+  font-size: 0.875rem;
+  letter-spacing: 0.0625rem;
+  padding-right: 0.9375rem;
+  padding-left: 0.9375rem;
+  box-sizing: border-box;
+}
+.main .login-container .login-list .login-item .login-btn {
+  width: 21.875rem;
+  height: 2.5rem;
+  background-color: #00b4ef;
+  color: #FFFFFF;
+  letter-spacing: 0.0625rem;
+  border: none;
+  border-radius: 0.1875rem;
+  outline: none;
+  cursor: pointer;
+  box-sizing: bborder-box;
+}
+.main .login-container .login-list .login-item .login-btn:active {
+  background-color: #00a1d6;
+}
+.main .login-container .login-list .login-item .recover-link {
+  font-size: 0.875rem;
+  padding-bottom: 0.1875rem;
+  color: #666;
+  border-bottom: solid 0.0625rem #666;
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+.main .login-container .login-list .login-item .recover-link:active {
+  color: #333;
+  border-bottom-color: #333;
+}
+.main .login-container .login-list .login-item:first-child {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.main .login-container .login-list .login-item:last-child {
+  margin-top: 0.625rem;
+}
+.main .recover-container {
+  display: none;
+  width: 48.75rem;
+  box-sizing: border-box;
+  border-radius: 0.3125rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  margin-top: 9.375rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 0.3125rem rgba(255, 255, 255, 0.2);
+}
+.main .recover-container .recover-title {
+  font-size: 1.5rem;
+  height: 2.8125rem;
+  line-height: 2.8125rem;
+  background-color: rgba(0, 180, 239, 0.75);
+  letter-spacing: 0.125rem;
+  color: #ffffff;
+  margin-top: 1.875rem;
+  margin-bottom: 1.875rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  font-weight: 600;
+}
+.main .recover-container .step-container {
+  padding-top: 1.25rem;
+}
+.main .recover-container .step-container .step-bar {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  cursor: default;
+}
+.main .recover-container .step-container .step-bar .step-list {
+  width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  list-style: none;
+  height: 3.75rem;
+  margin-bottom: 1.25rem;
+}
+.main .recover-container .step-container .step-bar .step-list .step {
+  width: 11.25rem;
+  height: 0.625rem;
+  background-color: #ccc;
+  float: left;
+  position: relative;
+}
+.main .recover-container .step-container .step-bar .step-list .step .ball {
+  position: absolute;
+  top: -0.75rem;
+  left: 4.6875rem;
+  width: 1.625rem;
+  height: 1.625rem;
+  border-radius: 100%;
+  background-color: #999;
+  border: solid #b9b9b9 0.25rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  line-height: 1.75rem;
+}
+.main .recover-container .step-container .step-bar .step-list .step .desc {
+  position: absolute;
+  font-size: 0.875rem;
+  top: 1.75rem;
+  width: inherit;
+  text-align: center;
+}
+.main .recover-container .step-container .step-bar .step-list .step-active {
+  background-color: #e86167;
+}
+.main .recover-container .step-container .step-bar .step-list .step-active .ball {
+  background-color: #e86167 !important;
+  border-color: #ee8d91 !important;
+}
+.main .recover-container .step-container .step-content {
+  width: 45.625rem;
+  height: 18.75rem;
+  margin: 1.25rem;
+  overflow: hidden;
+}
+.main .recover-container .step-container .step-content .step-wrapper {
+  width: 182.5rem;
+  height: 18.75rem;
+  margin-left: 0;
+  transition: all 0.5s;
+}
+.main .recover-container .step-container .step-content .step-wrapper .step {
+  float: left;
+  height: 18.75rem;
+  width: 45.625rem;
+}
+.main .recover-container .step-container .step-content .step-wrapper .step .step-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  border-bottom: dashed #999 0.0625rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.875rem;
+  letter-spacing: 0.0625rem;
+  width: 40.625rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main .recover-container .step-container .step-content .step-wrapper .step .step-list {
+  padding: 0;
+  list-style: none;
+  margin: 0 auto 0 auto;
+  width: 40.625rem;
+}
+.main .recover-container .step-container .step-content .step-wrapper .step .step-list .step-item label {
+  font-size: 0.875rem;
+  line-height: 2.5rem;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  display: inline-block;
+  letter-spacing: 0.0625rem;
+  margin-right: 0.9375rem;
+  width: 4.6875rem;
+}
+.main .recover-container .step-container .step-content .step-wrapper .step .step-list .step-item .input {
+  width: 18.75rem;
+  height: 2.5rem;
+  border: #e0e0e0 solid 0.0625rem;
+  border-radius: 0.1875rem;
+  padding-bottom: 0.0625rem;
+  padding-top: 0.0625rem;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  outline: none;
+  font-size: 0.875rem;
+  letter-spacing: 0.0625rem;
+  box-sizing: border-box;
+}
+.main .recover-container .step-container .step-content .step-wrapper .step .step-list .step-item .next {
+  width: 9.375rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 0.1875rem;
+  background-color: #63D258;
+  outline: none;
+  color: #fff;
+  letter-spacing: 0.0625rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 0.9375rem;
+}
+.main .recover-container .step-container .step-content .step-wrapper .step .step-list .step-item .next:active {
+  background-color: #41c334;
+}
+.main .recover-container .step-container .step-content .step-wrapper .step .step-list .step-item .cancel {
+  width: 9.375rem;
+  height: 2.5rem;
+  color: #FFF;
+  background-color: #e86167;
+  border: none;
+  border-radius: 0.1875rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  letter-spacing: 0.0625rem;
+  margin-left: 0.9375rem;
+  cursor: pointer;
+}
+.main .recover-container .step-container .step-content .step-wrapper .step .step-list .step-item .cancel:active {
+  background-color: #e23530;
+}
+.main .recover-container .step-container .step-content .step-wrapper .step .step-list .success {
+  text-align: center;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.main .recover-container .step-container .step-content .step-wrapper .step .step-list .success .success-btn {
+  width: 9.375rem;
+  height: 2.5rem;
+  background-color: #63D258;
+  border: none;
+  border-radius: 0.1875rem;
+  outline: none;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.0625rem;
+}
+.main .recover-container .step-container .step-content .step-wrapper .step .step-list .success .success-btn:active {
+  background-color: #41c334;
+}
+.main .recover-container .step-container .step-content .step-wrapper .step .step-list .success #sec {
+  color: #e2353d;
+  font-weight: bold;
+  margin-right: 0.25rem;
+}
+input.ng-invalid {
+  color: red;
+}
+input.ng-pristine {
+  color: #333;
+}

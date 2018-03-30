@@ -1,0 +1,193 @@
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: inherit;
+    height: inherit;
+    background-color: #f1f1f1;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+*{
+    box-sizing: border-box;
+}
+p,label{
+    font-size: 14px !important;
+}
+a{
+    text-decoration: none;
+}
+.header{
+    height: 60px;
+    background-color: #1f262e;
+    
+    .logo{
+        float: left;
+        color: #02a0e9;
+        h2{
+            margin: 0;
+            float: left;
+            font-size: 32px;
+            height: 60px;
+            line-height: 60px;
+        }
+        h3{
+            padding-left: 30px;
+            margin: 0;
+            float: left;
+            font-size: 18px;
+            height: 60px;
+            line-height: 60px;
+            font-weight: normal;
+        }
+    }
+    .search{
+        float: right;
+        .keyword{
+            margin-top: 14px;
+            float: left;
+            height: 32px;
+            width: 190px;
+            border: none;
+            color: #ccc;
+            background-color: #47515B;
+            outline: none;//去掉焦点边框
+            padding: 0 10px;//内填充
+            font-family: "微软雅黑";
+            letter-spacing: 1px;
+        }
+        .btn{
+            border:none;
+            float: right;
+            height: 32px;
+            width: 40px;
+            margin-top: 14px;
+            background-color: #29b87a;
+            outline: none;
+            background-image: url("img/icon/search.png");
+            background-repeat: no-repeat;//图片不重复
+            background-size: 24px 24px;
+            background-position-x: 8px;//距离的x轴
+            background-position-y: 4px;
+            &:active{
+                background-color: #fff;
+            }
+        }
+    }
+}
+.main{
+    flex-grow: 1;//自动占满多余空间，会随时变大
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .system{
+        .card{
+            background-color: #fff;
+            overflow: hidden;//防止坍塌                                   
+            padding: 20px;//内填充
+            box-sizing: border-box;
+            img{
+                float: left;
+            }
+            .operate{
+                float: right;
+                .tab{
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    overflow: hidden;
+                    li{
+                        height: 50px;
+                        width: 200px;
+                        background-color: #4b5763;
+                        text-align: center;
+                        color: #fff;
+                        font-size: 16px;
+                        letter-spacing: 2px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        line-height: 50px;
+                        float: left;
+                        &:first-child{
+                            border-top-left-radius: 3px;//左上圆角
+                            border-bottom-left-radius: 3px;
+                        }
+                        &:last-child{
+                            border-top-right-radius: 3px;
+                            border-bottom-right-radius: 3px;
+                        }
+                    }
+                    .tab-active{
+                        background-color: #1f232e;
+                    }
+                }
+                .pannel{
+                    display: none;
+                    .input-line{
+                        background-color: #ededed;
+                        border-radius: 3px;
+                        margin: 26px 0;
+                        label{
+                            font-size: 14px !important;
+                            line-height: 24px;
+                            width: 80px;
+                            border-right: #d5d5d5 1px solid;//右边框
+                            display: inline-block;
+                            text-align: center;
+                            letter-spacing: 1px;
+                        }
+                        input{
+                            height: 50px;
+                            width: 285px;
+                            margin-left: 15px;
+                            border: none;
+                            outline: none;
+                            font-size: 14px !important;//强制设置
+                            letter-spacing: 1px;
+                            font-family: "微软雅黑";
+                            background-color: #ededed;
+                        }
+                    }
+                    .btn{
+                        height: 50px;
+                        width: 400px;
+                        border: none;
+                        letter-spacing: 2px;
+                        background-color: #02a0e9;
+                        text-align: center;
+                        color: #fff;
+                        font-weight: bold;
+                        border-radius: 3px;
+                        font-size: 16px;
+                        margin-top: 20px;
+                        &:active{
+                            background-color: #028FD0;
+                        }
+
+                    }
+                }
+                .pannel-active{
+                    display: block;
+                }
+            }
+        }
+    }
+    .section{
+       
+    }
+}
+.footer{
+    height: 60px;
+    background-color: #1f262e;
+    
+}
+.container{
+    width: 1000px;
+    margin: 0 auto;
+}

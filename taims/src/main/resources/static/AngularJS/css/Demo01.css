@@ -1,0 +1,14 @@
+var app = angular.module("app",[]);
+
+app.controller("firstController",function($scope){
+	var json = [{
+		"name":"Scott",
+		"sex":"male",
+		"age":20
+	},{
+		"name":"Tom",
+		"sex":"male",
+		"age":20
+	}]
+	$scope.list = json
+});

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.tentact.taims.dao.PrivilegeDao">
+	<select id="searchUserPrivilege" parameterType="String" resultType="Map">
+		SELECT
+			p.id,
+			p.name
+		FROM
+			user u
+		JOIN
+			role r ON FIND_IN_SET(CONCAT('`',r.id,'`'),COLUMN_LIST(u.role))
+		JOIN
+			privilege p ON FIND_IN_SET(CONCAT('`',p.id,'`'),COLUMN_LIST(r.privilege))
+		WHERE
+			u.username = #{username};
+	</select>
+</mapper>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+<link rel="stylesheet" href="add.css" />
+<link rel="stylesheet" href="../../js/iview/iview.css" />
+</head>
+<body>
+	<h3 class="title">修改学生信息</h3>
+	<div id="student-info-add">
+		<p>
+			<i-input v-model="name" required="required"> <span slot="prepend">姓名</span> </i-input>
+		</p>
+		<p>
+			<span class="attribute">性别</span>
+			<radio-group v-model="sex">
+				<radio label="男"></radio>
+				<radio label="女"></radio>
+			</radio-group>
+		</p>
+		<p>
+			<span class="attribute">生日</span>
+			<i-col span="12" v-model="birthday">
+            	<date-picker type="date"  placeholder="选择日期" style="width: 200px"  @on-change="selectDate" :value="birthday"></date-picker>
+        	</i-col>
+		</p>
+		<p>
+			<span class="attibute">班级</span>
+			<i-select v-model="classId" style="width:200px">
+       			<i-option v-for="item in classList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
+   			</i-select>
+		</p>
+		<p>
+			<i-input v-model="tel" > <span slot="prepend">电话</span> </i-input>
+		</p>
+		<p>
+			<i-input v-model="pid"> <span slot="prepend" >身份证</span> </i-input>
+		</p>
+		<p>
+			<i-input v-model="school"> <span slot="prepend">毕业院校</span> </i-input>
+		</p>
+		<p>
+			<i-input v-model="major"> <span slot="prepend">所学专业</span> </i-input>
+		</p>
+		<p>
+			<span class="attibute">毕业年份</span>
+			<i-select v-model="yearId" style="width:200px">
+       			<i-option v-for="item in yearList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
+   			</i-select>
+		</p>
+		<p>
+			<span class="attribute">状态</span>
+			<radio-group v-model="state">
+				<radio label="学习"></radio>
+				<radio label="就业"></radio>
+				<radio label="未就业"></radio>
+			</radio-group>
+		</p>
+		<p>
+			<i-button type="primary" @click="updateInfo">保存</i-button>
+			<i-button type="primary" @click="cancelInfo">取消</i-button>
+		</p>
+	</div>
+	<script src="../../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/iview/iview.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/pid.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="modify.js"></script>
+</body>
+</html>

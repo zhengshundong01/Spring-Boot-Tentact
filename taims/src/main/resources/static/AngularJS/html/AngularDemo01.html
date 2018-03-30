@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/Demo01.css"/>
+	</head>
+	<!-- 划分具体代码段的作用范围  -->
+	<body ng-controller="firstController">
+		<table>
+			<tr>
+				<td>姓名</td>
+				<td>性别</td>
+				<td>年龄</td>
+			</tr>
+			<tr ng-repeat="one in list">
+				<td>{{one.name}}</td>
+				<td>{{one.sex}}</td> 
+				<td>{{one.age}}</td>
+				
+			</tr>
+		</table>
+		<div ng-controller="A">
+			<p>{{name}}</p>
+		</div>
+		
+		<div ng-controller="C">
+			<p>用户名：<input type="text" ng-model="username" /></p>
+			<p><input type="button" value="test" ng-click="test()"/></p>
+		</div>
+		
+		<div ng-controller="D">
+			<p>
+				<select id="province" ng-change="flushCity()" ng-model="province">
+					<option value="">选择</option>
+					<option value="{{one.name}}" ng-repeat="one in china">{{one.name}}</option>
+				</select>省
+				<select id="city">
+					<option value="">选择</option>
+					<option value="{{one}}" ng-repeat="one in city">{{one}}</option>
+				</select>市
+				
+			</p>
+		</div>
+		
+		
+		<script src="../js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/Demo01.js" type="text/javascript" charset="utf-8"></script>
+		
+	
+	</body>
+</html>

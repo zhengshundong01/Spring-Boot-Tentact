@@ -1,0 +1,38 @@
+server:
+  port: 9080
+  ssl:
+    key-store: classpath:tentact.jks
+    key-password: abc123456
+    key-store-password: abc123456
+    key-alias: tentact
+
+#配置识别JDBC连接数据库驱动
+spring:
+ datasource:
+   name: mysql
+   url: jdbc:mysql://localhost:8066/tentact
+   username: admin
+   password: abc123456
+   driver-class-name: com.mysql.jdbc.Driver
+
+ redis:
+   host: 127.0.0.1
+   port: 6379
+   password: abc123456
+   database: 0
+   jedis: 
+      pool:
+       max-active: 10
+       min-idle: 2 
+
+ data:
+    mongodb:
+      host: 127.0.0.1
+      database: tentact
+      port: 27017
+      authentication-database: admin
+      username: admin
+      password: abc123456
+#配置识别SQL语句的路径
+mybatis:
+  mapper-locations: classpath*:cn/tentact/taims/dao/mapping/*Mapper.xml

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.tentact.taims.dao.StudentDao">
+	<select  id="searchCount" resultType="long">
+		SELECT COUNT(*) as count FROM student;
+	</select>
+	<select  id="searchPage" parameterType="Map" resultType="Map">
+		SELECT
+			s.id,
+			s.name,
+			s.sex,
+			cast(s.birthday as char) as birthday,
+			c.name AS className,
+			s.tel,
+			s.pid,
+			s.school,
+			s.major,
+			s.year,
+			s.state
+		from student s JOIN class c
+		on s.class_id = c.id
+		order by s.id
+		LIMIT #{start},#{length}
+		
+	</select>
+	<delete id="deleteById" parameterType="int">
+		DELETE FROM student WHERE id=#{id};
+	</delete>
+	<delete id="deleteByIds" parameterType="Map">
+		DELETE FROM student 
+		<where>
+			id IN
+			<foreach item="one" collection="ids" open="(" close=")" separator=",">
+				#{one}
+			</foreach>
+		</where>
+	</delete>
+	<insert id="insertStudent" parameterType="Map" >
+		INSERT INTO student(id,name,sex,birthday,class_id,tel,pid,school,major,year,state) 
+		VALUES (next value for MYCATSEQ_STUDENT,
+		#{name}, 
+		#{sex}, 
+		#{birthday}, 
+		#{class_id},
+		#{tel},
+		#{pid},
+		#{school},
+		#{major},
+		#{year},
+		#{state})
+	</insert>
+	<select id="searchPidCount" parameterType="String" resultType="int">
+		SELECT count(*) FROM student WHERE pid=#{pid}
+	</select>
+	<update id="updateStudentInfo"  parameterType="Map" >
+		UPDATE student set name=#{name},
+		sex=#{sex},
+		birthday=#{birthday},
+		class_id=#{class_id},
+		tel=#{tel},
+		pid=#{pid},
+		school=#{school},
+		major=#{major},
+		year=#{year},
+		state=#{state}
+		WHERE id=#{id}
+	</update>
+	
+</mapper>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Document</title>
+<link rel="stylesheet" href="js/iview/iview.css" />
+<link rel="stylesheet" href="index.css" />
+</head>
+<body>
+	<div id="app">
+		<div class="layout">
+			<row type="flex">
+			 <i-col span="3" class="layout-menu-left menu">
+			 	<i-menu active-name="system-info" theme="dark" width="auto":open-names="['system']" @on-select="link">
+					<!-- <div class="layout-logo-left"></div> -->
+					<submenu name="system">
+						 <template slot="title"> 
+					 		<icon type="ios-navigate"></icon>  系统信息
+					 	 </template> 
+					 	 <menu-item name="system-info">系统首页</menu-item> 
+						 <menu-item name="system-notice">公告栏</menu-item>
+					  	 <menu-item name="system-message">123456</menu-item> 
+					 </submenu>
+					 <submenu name="website"> 
+					     <template slot="title">
+							<icon type="ios-keypad"></icon>  企业网站
+						 </template>
+						 <menu-item name="website-state">网站状态</menu-item>
+						 <menu-item name="website-manage">网站管理</menu-item> 
+						 <menu-item name="website-news">新闻管理</menu-item>
+						 <menu-item name="website-technology">资讯管理</menu-item> 
+					 </submenu>
+					 <submenu name="student">
+						<template slot="title"> 
+							<icon type="ios-analytics"></icon> 学生管理 
+						</template>
+						<menu-item name="student-info" >学生信息</menu-item> 
+						<menu-item name="place-info">班级管理</menu-item> 
+						<menu-item name="class-info">位置管理</menu-item> 
+						<menu-item name="student-attendance">考勤管理</menu-item> 
+						<menu-item name="student-principle">违纪管理</menu-item> 
+					 </submenu> 
+				</i-menu> 
+			</i-col>
+			<i-col span="21" class="main">
+				<div class="layout-header"></div>
+				<div class="layout-breadcrumb">
+					<breadcrumb>
+						 <breadcrumb-item href="#">首页</breadcrumb-item>
+						 <breadcrumb-item href="#">应用中心</breadcrumb-item> 
+						 <breadcrumb-item>某应用</breadcrumb-item>
+					</breadcrumb>
+				</div>
+				<div class="layout-content">
+					<div class="layout-content-main">
+					<iframe id="content" frameborder="0" width="100%" ></iframe>
+					</div>
+				</div>
+				<div class="layout-copy">2011-2016 &copy; TalkingData</div>
+			</i-col>
+		 </row>
+		</div>
+
+	</div>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript" src="js/iview/iview.min.js"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+
+</body>
+</html>

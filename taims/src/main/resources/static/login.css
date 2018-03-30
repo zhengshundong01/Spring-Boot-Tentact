@@ -1,0 +1,185 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: inherit;
+  height: inherit;
+  background-color: #f1f1f1;
+  font-size: 14px;
+  font-family: "微软雅黑";
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+* {
+  box-sizing: border-box;
+}
+p,
+label {
+  font-size: 14px !important;
+}
+a {
+  text-decoration: none;
+}
+.header {
+  height: 60px;
+  background-color: #1f262e;
+}
+.header .logo {
+  float: left;
+  color: #02a0e9;
+}
+.header .logo h2 {
+  margin: 0;
+  float: left;
+  font-size: 32px;
+  height: 60px;
+  line-height: 60px;
+}
+.header .logo h3 {
+  padding-left: 30px;
+  margin: 0;
+  float: left;
+  font-size: 18px;
+  height: 60px;
+  line-height: 60px;
+  font-weight: normal;
+}
+.header .search {
+  float: right;
+}
+.header .search .keyword {
+  margin-top: 14px;
+  float: left;
+  height: 32px;
+  width: 190px;
+  border: none;
+  color: #ccc;
+  background-color: #47515B;
+  outline: none;
+  padding: 0 10px;
+  font-family: "微软雅黑";
+  letter-spacing: 1px;
+}
+.header .search .btn {
+  border: none;
+  float: right;
+  height: 32px;
+  width: 40px;
+  margin-top: 14px;
+  background-color: #29b87a;
+  outline: none;
+  background-image: url("img/icon/search.png");
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position-x: 8px;
+  background-position-y: 4px;
+}
+.header .search .btn:active {
+  background-color: #fff;
+}
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main .system .card {
+  background-color: #fff;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.main .system .card img {
+  float: left;
+}
+.main .system .card .operate {
+  float: right;
+}
+.main .system .card .operate .tab {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+.main .system .card .operate .tab li {
+  height: 50px;
+  width: 200px;
+  background-color: #4b5763;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 50px;
+  float: left;
+}
+.main .system .card .operate .tab li:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.main .system .card .operate .tab li:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.main .system .card .operate .tab .tab-active {
+  background-color: #1f232e;
+}
+.main .system .card .operate .pannel {
+  display: none;
+}
+.main .system .card .operate .pannel .input-line {
+  background-color: #ededed;
+  border-radius: 3px;
+  margin: 26px 0;
+}
+.main .system .card .operate .pannel .input-line label {
+  font-size: 14px !important;
+  line-height: 24px;
+  width: 80px;
+  border-right: #d5d5d5 1px solid;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.main .system .card .operate .pannel .input-line input {
+  height: 50px;
+  width: 285px;
+  margin-left: 15px;
+  border: none;
+  outline: none;
+  font-size: 14px !important;
+  letter-spacing: 1px;
+  font-family: "微软雅黑";
+  background-color: #ededed;
+}
+.main .system .card .operate .pannel .btn {
+  height: 50px;
+  width: 400px;
+  border: none;
+  letter-spacing: 2px;
+  background-color: #02a0e9;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 3px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+.main .system .card .operate .pannel .btn:active {
+  background-color: #028FD0;
+}
+.main .system .card .operate .pannel-active {
+  display: block;
+}
+.footer {
+  height: 60px;
+  background-color: #1f262e;
+}
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
